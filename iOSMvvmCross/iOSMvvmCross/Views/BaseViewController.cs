@@ -15,13 +15,13 @@ namespace iOS.Views
 
             View.BackgroundColor = UIColor.White;
 
-            NavigationController.NavigationBar.BarStyle = UIBarStyle.Black;
-            NavigationController.NavigationBar.Translucent = false;
-            NavigationController.NavigationBar.Hidden = false;
-            NavigationController.NavigationBar.BarTintColor = ColorPalette.Primary;
-            NavigationController.NavigationBar.TintColor = UIColor.White;
+            //NavigationController.NavigationBar.BarStyle = UIBarStyle.Black;
+            //NavigationController.NavigationBar.Translucent = false;
+            //NavigationController.NavigationBar.Hidden = false;
+            //NavigationController.NavigationBar.BarTintColor = ColorPalette.Primary;
+            //NavigationController.NavigationBar.TintColor = UIColor.White;
 
-            NavigationController.SetNeedsStatusBarAppearanceUpdate();
+            //NavigationController.SetNeedsStatusBarAppearanceUpdate();
 
             CreateView();
 
@@ -34,7 +34,7 @@ namespace iOS.Views
         {
             base.ViewWillAppear(animated);
 
-            View.SubviewsDoNotTranslateAutoresizingMaskIntoConstraints();
+            //View.SubviewsDoNotTranslateAutoresizingMaskIntoConstraints();
         }
 
         protected virtual void CreateView()

@@ -20,5 +20,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Core\.DS_Store" />
+    <None Remove="Core\Rest\" />
+    <None Remove="Core\Models\" />
+    <None Remove="Sources\" />
+    <None Remove="Views\Cells\" />
+    <None Remove="Core\Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Core\Rest\" />
+    <Folder Include="Core\Models\" />
+    <Folder Include="Sources\" />
+    <Folder Include="Views\Cells\" />
+    <Folder Include="Core\Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Core\ViewModels\Main\MainContainerViewModel.cs" />
   </ItemGroup>
 </Project>
