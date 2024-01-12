@@ -75,14 +75,7 @@ public class AlbumsViewModel : BaseViewModel
 
     private async Task AlbumSelected(Album selectedAlbum)
     {
-        //var result = await _navigationService.Navigate<AlbumViewModel, Album, DestructionResult<Album>>(selectedAlbum);
-
-        //if (result != null && result.Destroyed)
-        //{
-        //    var album = Albums.FirstOrDefault(p => p.Id == result.Entity.Name);
-        //    if (album != null)
-        //        Albums.Remove(album);
-        //}
+        _ = await _navigationService.Navigate<PhotosViewModel, AlbumDetailParameters>(new AlbumDetailParameters(selectedAlbum));
     }
 
     private void RefreshAlbums()

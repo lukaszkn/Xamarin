@@ -1,4 +1,4 @@
-﻿namespace iOSMvvmCross.Core.Models;
+﻿namespace Core.Models;
 
 public class Photo
 {

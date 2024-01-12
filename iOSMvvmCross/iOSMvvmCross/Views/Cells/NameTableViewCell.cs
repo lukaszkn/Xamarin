@@ -30,15 +30,5 @@ public class NameTableViewCell : MvxStandardTableViewCell
         BackgroundColor = UIColor.Clear;
     }
 
-    public string MainText
-    {
-        get {
-            return TitleText;
-        }
-        set {
-            TitleText = value;
-        }
-    }
-
 }
 

@@ -15,9 +15,12 @@ public class AlbumService : IAlbumService
 
     public Task<List<Album>> GetAlbumsAsync(string url = null)
     {
-        return string.IsNullOrEmpty(url)
-                         ? _restClient.MakeApiCall<List<Album>>($"{ Constants.BaseUrl }/albums/", HttpMethod.Get)
-                         : _restClient.MakeApiCall<List<Album>>(url, HttpMethod.Get);
+        return _restClient.MakeApiCall<List<Album>>($"{Constants.BaseUrl}/albums/", HttpMethod.Get);
+    }
+
+    public Task<List<Photo>> GetPhotosAsync()
+    {
+        return _restClient.MakeApiCall<List<Photo>>($"{Constants.BaseUrl}/photos/", HttpMethod.Get);
     }
 }
 
