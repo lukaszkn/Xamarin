@@ -14,6 +14,14 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell x:DataType="model:SpaceXLaunch" Text="{Binding mission_name}">
+
+                        <TextCell.Detail>
+                            <MultiBinding StringFormat="{}{0:dd/MM/yyyy}  Rocket: {1}">
+                                <Binding Path="launch_date_local" />
+                                <Binding Path="rocket.rocket_name" />
+                            </MultiBinding>
+
+                        </TextCell.Detail>
                     </TextCell>
                 </DataTemplate>
             </ListView.ItemTemplate>

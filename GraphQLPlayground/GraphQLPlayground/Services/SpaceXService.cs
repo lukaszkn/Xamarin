@@ -14,9 +14,6 @@ namespace GraphQLPlayground.Services
 {
     public class SpaceXService : ISpaceXService
     {
-        public SpaceXService()
-        {
-        }
 
         public async Task<List<SpaceXLaunch>> GetSpaceXLaunchesAsync()
         {
@@ -28,11 +25,11 @@ namespace GraphQLPlayground.Services
             var httpClient = new HttpClient();
             var graphQLClient = new GraphQLHttpClient(graphQLHttpClientOptions, new GraphQL.Client.Serializer.Newtonsoft.NewtonsoftJsonSerializer(), httpClient);
 
-            var launchRequest = new GraphQLRequest
+            var launchesRequest = new GraphQLRequest
             {
                 Query = @"
                     {
-                        launchesPast(limit: 10) {
+                        launchesPast(limit: 40) {
                             mission_name
                             launch_date_local
                             rocket {
@@ -43,7 +40,7 @@ namespace GraphQLPlayground.Services
                 "
             };
 
-            var graphQLResponse = await graphQLClient.SendQueryAsync<SpaceXLaunchResponse>(launchRequest);
+            var graphQLResponse = await graphQLClient.SendQueryAsync<SpaceXLaunchResponse>(launchesRequest);
             return graphQLResponse.Data.launchesPast;
         }
     }
